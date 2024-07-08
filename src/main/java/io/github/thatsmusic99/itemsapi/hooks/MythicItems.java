@@ -4,15 +4,20 @@ import io.github.thatsmusic99.itemsapi.api.ItemAPI;
 import io.lumine.mythic.api.MythicProvider;
 import io.lumine.mythic.bukkit.adapters.BukkitItemStack;
 import io.lumine.mythic.core.items.MythicItem;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
+/**
+ * Uses MythicMobs. Format: mythicmobs:id
+ */
 public class MythicItems implements ItemAPI {
+
     @Override
-    public @Nullable ItemStack getItem(@NotNull String input) {
+    public @Nullable ItemStack getItem(@NotNull String input, @Nullable Player player) {
         final Optional<MythicItem> item = MythicProvider.get().getItemManager().getItem(input);
 
         if (item.isPresent()) {

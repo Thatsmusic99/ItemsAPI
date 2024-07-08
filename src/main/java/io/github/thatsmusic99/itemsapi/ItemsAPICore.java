@@ -3,6 +3,7 @@ package io.github.thatsmusic99.itemsapi;
 import io.github.thatsmusic99.itemsapi.api.ItemAPI;
 import io.github.thatsmusic99.itemsapi.hooks.*;
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -31,7 +32,7 @@ public class ItemsAPICore {
         this.apis.add(api);
     }
 
-    public @Nullable ItemStack getItem(final @NotNull String input) {
+    public @Nullable ItemStack getItem(final @NotNull String input, final @Nullable Player player) {
 
         // Go through each API
         for (ItemAPI api : this.apis) {
@@ -54,6 +55,11 @@ public class ItemsAPICore {
         }
 
         return null;
+    }
+
+    public @Nullable ItemStack getItem(final @NotNull String input) {
+
+        return getItem(input, null);
     }
 
     public @Nullable String getID(final @NotNull ItemStack item) {

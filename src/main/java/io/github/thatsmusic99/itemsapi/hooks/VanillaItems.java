@@ -1,9 +1,11 @@
 package io.github.thatsmusic99.itemsapi.hooks;
 
 import io.github.thatsmusic99.itemsapi.api.ItemAPI;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.Registry;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -11,7 +13,7 @@ import org.jetbrains.annotations.Nullable;
 public class VanillaItems implements ItemAPI {
 
     @Override
-    public @Nullable ItemStack getItem(@NotNull String input) {
+    public @Nullable ItemStack getItem(@NotNull String input, @Nullable Player player) {
 
         Registry<Material> materials = Registry.SimpleRegistry.MATERIAL;
         NamespacedKey key = NamespacedKey.fromString(input);

@@ -1,5 +1,6 @@
 package io.github.thatsmusic99.itemsapi.api;
 
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -15,7 +16,11 @@ public interface ItemAPI {
      * @param input
      * @return
      */
-    @Nullable ItemStack getItem(@NotNull String input);
+    @Nullable ItemStack getItem(@NotNull String input, @Nullable Player player);
+
+    default ItemStack getItem(@NotNull String input) {
+        return getItem(input, null);
+    }
 
     @Nullable String getID(@NotNull ItemStack item);
 

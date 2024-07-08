@@ -2,9 +2,9 @@ package io.github.thatsmusic99.itemsapi.hooks;
 
 import io.github.thatsmusic99.headsplus.HeadsPlus;
 import io.github.thatsmusic99.headsplus.managers.HeadManager;
-import io.github.thatsmusic99.headsplus.managers.MaskManager;
 import io.github.thatsmusic99.itemsapi.api.ItemAPI;
 import org.bukkit.Material;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
 import org.jetbrains.annotations.NotNull;
@@ -14,7 +14,7 @@ public class HeadsPlusItems implements ItemAPI {
 
     @Nullable
     @Override
-    public ItemStack getItem(@NotNull String input) {
+    public ItemStack getItem(@NotNull String input, @Nullable Player player) {
         final var head = HeadManager.get().getHeadInfo(input);
         if (head == null) return null;
         return head.forceBuildHead();

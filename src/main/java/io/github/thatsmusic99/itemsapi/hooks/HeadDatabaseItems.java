@@ -2,6 +2,7 @@ package io.github.thatsmusic99.itemsapi.hooks;
 
 import io.github.thatsmusic99.itemsapi.api.ItemAPI;
 import me.arcaniax.hdb.api.HeadDatabaseAPI;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -18,7 +19,7 @@ public class HeadDatabaseItems implements ItemAPI {
     }
 
     @Override
-    public @NotNull ItemStack getItem(@NotNull String input) {
+    public @NotNull ItemStack getItem(@NotNull String input, @Nullable Player player) {
         return api.getItemHead(input);
     }
 

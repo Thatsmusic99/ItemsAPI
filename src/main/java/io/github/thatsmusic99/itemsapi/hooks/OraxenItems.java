@@ -1,6 +1,7 @@
 package io.github.thatsmusic99.itemsapi.hooks;
 
 import io.github.thatsmusic99.itemsapi.api.ItemAPI;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -11,7 +12,7 @@ import org.jetbrains.annotations.Nullable;
 public class OraxenItems implements ItemAPI {
 
     @Override
-    public @Nullable ItemStack getItem(@NotNull String input) {
+    public @Nullable ItemStack getItem(@NotNull String input, @Nullable Player player) {
         return io.th0rgal.oraxen.api.OraxenItems.getItemById(input).build();
     }
 
