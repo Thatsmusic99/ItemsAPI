@@ -10,6 +10,7 @@ Inbuilt support is provided for:
 - HeadDatabase
 - HeadsPlus
 - ItemsAdder
+- MMOItems
 - MythicMobs
 - Oraxen
 - Bukkit

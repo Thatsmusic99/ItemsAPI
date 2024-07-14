@@ -22,6 +22,7 @@ public class ItemsAPICore {
         registerAPI(new HeadDatabaseItems());
         registerAPI(new HeadsPlusItems());
         registerAPI(new ItemsAdderItems());
+        registerAPI(new MMOItemsItems());
         registerAPI(new MythicItems());
         registerAPI(new OraxenItems());
         registerAPI(new VanillaItems());
