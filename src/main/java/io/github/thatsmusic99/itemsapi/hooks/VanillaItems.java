@@ -21,7 +21,7 @@ public class VanillaItems implements ItemAPI {
         Material material = materials.get(key);
         if (material == null) return null;
 
-        return new ItemStack(material);
+        return Bukkit.getItemFactory().createItemStack(input);
     }
 
     @Override
