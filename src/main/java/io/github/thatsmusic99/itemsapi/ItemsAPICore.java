@@ -51,7 +51,8 @@ public class ItemsAPICore {
 
             // Check if the API in question can parse this input
             if (!api.usable(id)) continue;
-            return api.getItem(id);
+            final var result = api.getItem(id, player);
+            if (result != null) return result;
         }
 
         return null;
